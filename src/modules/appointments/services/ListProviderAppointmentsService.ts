@@ -18,7 +18,7 @@ class ListProviderAppointmentsService {
     private appointmentsRepository: IAppointmentsRepository,
 
     @inject('CacheProvider')
-    private CacheProvider: ICacheProvider,
+    private cacheProvider: ICacheProvider,
   ) {}
 
   public async execute({
@@ -27,7 +27,7 @@ class ListProviderAppointmentsService {
     month,
     day,
   }: IRequest): Promise<Appointment[]> {
-    const cacheData = await this.CacheProvider.recover('asd');
+    const cacheData = await this.cacheProvider.recover('asd');
 
     console.log(cacheData);
 
